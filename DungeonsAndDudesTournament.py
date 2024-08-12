@@ -8,7 +8,6 @@ class Participant:
 
     def getName(self):
         return self.name
-        
 
 pcs = []
 rndCnt = 0
@@ -68,15 +67,10 @@ def generateSchedule(result_text, nextBtn):
     for match in rr[rndCnt]:
         result_text.insert(tk.END, f"{match[0]} vs {match[1]}\n")
 
-
-
     rndCnt = rndCnt + 1
     if rndCnt == len(rr):
-        result_text.insert(tk.END, "\nEND\n")
+        result_text.insert(tk.END, "\nEND?\n")
         nextBtn.config(state=tk.DISABLED)
-
-def clear(result_text):
-    result_text.delete()
 
 def main():
     root = tk.Tk()
